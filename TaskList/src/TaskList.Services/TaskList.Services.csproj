@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskList.Domain.ViewModels\TaskList.Domain.ViewModels.csproj" />
+    <ProjectReference Include="..\TaskList.Domain\TaskList.Domain.csproj" />
+    <ProjectReference Include="..\TaskList.Infrastructure.Repositories\TaskList.Infrastructure.Repositories.csproj" />
+    <ProjectReference Include="..\TaskList.Infrastructure.Validations\TaskList.Infrastructure.CrossCutting.Validators.csproj" />
+  </ItemGroup>
+
+</Project>
