@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="4.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskList.Domain.ViewModels\TaskList.Domain.ViewModels.csproj" />
+    <ProjectReference Include="..\TaskList.Domain\TaskList.Domain.csproj" />
+    <ProjectReference Include="..\TaskList.Infrastructure.Authentication\TaskList.Infrastructure.Authentication.csproj" />
+    <ProjectReference Include="..\TaskList.Infrastructure.Data\TaskList.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\TaskList.Infrastructure.Repositories\TaskList.Infrastructure.Repositories.csproj" />
+    <ProjectReference Include="..\TaskList.Services\TaskList.Services.csproj" />
+    <ProjectReference Include="..\TaskList.SharedKernel\TaskList.SharedKernel.csproj" />
+  </ItemGroup>
+
+
+</Project>
