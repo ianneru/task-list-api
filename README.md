@@ -5,7 +5,7 @@
 >1. .Net Core 3.1 
 >2. Sql Server com EF Core.
 >3. Autenticação por JWT Bearer.
->4. Clean Architecture.
+>4. Clean Architecture,DDD.
 >5. Utilização de Validator e Unit of Work.
 >6. Swagger.
 
