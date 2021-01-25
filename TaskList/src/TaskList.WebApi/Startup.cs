@@ -24,11 +24,6 @@ namespace TaskList.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //Autenticação por JWT Bearer
-            //Mapper
-            //Swagger
-            //EF Core
-
             services
                   .AddCors()
                   .AddMapper()
@@ -37,6 +32,7 @@ namespace TaskList.Web
                   .AddRepositories()
                   .AddServices()
                   .AddSwagger()
+                  //.AddSwaggerGen()
                   .AddControllers()
                   .AddNewtonsoftJson(options =>
                       options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -62,7 +58,8 @@ namespace TaskList.Web
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
-            seeder.SeedSimpleUser().GetAwaiter().GetResult();
+            //Db migrado para o azure
+            //seeder.SeedSimpleUser().GetAwaiter().GetResult();
         }
 
 
