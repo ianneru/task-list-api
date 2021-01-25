@@ -15,4 +15,4 @@
 
 ## Como utilizar
 
-#### Abrir a solution `TaskList.sln` com Visual Studio 2019 e rodar o projeto `TaskList.Application.WebApi` pelo IIS Express.
+#### Abrir a solution em  `TaskList.sln` com Visual Studio 2019 e rodar o projeto `TaskList.Application.WebApi` em src\Application pelo IIS Express.
