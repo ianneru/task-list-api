@@ -14,5 +14,11 @@ namespace TaskList.SharedKernel
         }
 
         public T Id { get; set; }
+
+        public DateTime DataCriacao { get; set; }
+
+        public DateTime? DataEdicao { get; set; }
+
+        public DateTime? DataRemocao { get; set; }
     }
 }

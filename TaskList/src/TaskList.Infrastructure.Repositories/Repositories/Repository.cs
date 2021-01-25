@@ -132,23 +132,22 @@ namespace TaskList.Infrastructure.Repositories
         {
             Expression<Func<TDomainModel, bool>> predicate = default;
 
-            foreach (var property in typeof(TDomainId).GetProperties())
-            {
-                var value = property.GetValue(id);
-                
-                var parameter = Expression.Parameter(typeof(TDomainModel), typeof(TDomainModel).Name);
-                
-                var memberExpression = Expression.Property(parameter, property.Name);
-                
-                value = ChangeType(value, memberExpression.Type);
-                
-                var condition = Expression.Equal(memberExpression,
-                    Expression.Convert(Expression.Constant(value), memberExpression.Type));
+            var property = typeof(TDomainId).GetProperties().FirstOrDefault(o => o.Name == "Id");
 
-                var lambda = Expression.Lambda<Func<TDomainModel, bool>>(condition, parameter);
+            var value = property.GetValue(id);
                 
-                predicate = predicate?.AndAlso(lambda) ?? lambda;
-            }
+            var parameter = Expression.Parameter(typeof(TDomainModel), typeof(TDomainModel).Name);
+                
+            var memberExpression = Expression.Property(parameter, property.Name);
+                
+            value = ChangeType(value, memberExpression.Type);
+                
+            var condition = Expression.Equal(memberExpression,
+                Expression.Convert(Expression.Constant(value), memberExpression.Type));
+
+            var lambda = Expression.Lambda<Func<TDomainModel, bool>>(condition, parameter);
+                
+            predicate = predicate?.AndAlso(lambda) ?? lambda;
 
             return predicate;
         }

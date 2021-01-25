@@ -35,13 +35,13 @@ namespace TaskList.Application.WebApi.Controllers
             return _unitOfWork.TarefaRepository.GetAllAsync();
         }
 
-        //[HttpGet("{id}")]
-        //[ProducesResponseType(StatusCodes.Status202Accepted)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
-        //public async Task<IActionResult> GetById(Guid id)
-        //{
-        //    return Ok(await _tarefaService.GetByIdAsync(new BaseEntity<Guid>(id)));
-        //}
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            return Ok(await _tarefaService.GetByIdAsync(new BaseEntity<Guid>(id)));
+        }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
